@@ -44,11 +44,11 @@ const getAllNotesHandler = () =>({
 
 const getNoteByIdHandlers =(request, h) =>{
 
-const {id} = request.params
+const {id} = request.params;
 
 const note = notes.filter((n) => n.id === id)[0];
 
-if(note != undefined){
+if(note !== undefined){
     return {
         status: 'success',
         data: {
@@ -57,7 +57,7 @@ if(note != undefined){
     }      
 }
 
-const response = response.h({
+const response = h.response({
     status: 'fail',
     message: 'catatan tidak ditemukan',
 })
